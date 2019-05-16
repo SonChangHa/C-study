@@ -22,7 +22,7 @@ void pi(int d) {
 int main(void)
 {
 	int d;
-	printf("몇자리 출력해드릴까?");
+	printf("紐뉗옄由� 異쒕젰?");
 	scanf_s("%d", &d);
 	pi(d);
 	return 0;
