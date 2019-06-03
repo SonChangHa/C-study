@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	int r = 0;
+	int go[6];
+	float s = 0.0f;
+
+	for(int i = 0; i<=5; i++)
+		go[i] = 0;
+
+	
+
+	printf("주사위 몇번 굴림? : ");
+	scanf_s("%d", &r);
+	
+	srand(time(0));
+
+	for (int i = 1; i <= r; i++)
+		go[rand() % 6]++;
+
+	printf("각 숫자가 나온 횟수\n");
+	for (int i = 0; i <= 5; i++)
+		printf("%d : %d \n", i + 1, go[i]);
+	
+	printf("\n확률\n");
+	for (int i = 0; i <= 5; i++)
+		printf("%d : %.1f%c \n", i + 1, (float)go[i] / r * 100, 37);
+
+	for (int i = 0; i <= 5; i++)
+		s += (float)go[i] / r * 100;
+
+	printf("\n확률 합 : %.1f", s);
+
+	return 0;
+}
